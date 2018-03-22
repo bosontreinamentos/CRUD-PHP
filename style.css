@@ -1,0 +1,40 @@
+/* Folha de Estilos CSS */
+
+body {
+	margin: auto;
+	height: 800px;
+	padding: 20px;
+}
+
+#header {
+	text-align: center;
+	color: blue;
+	font-size: 32px;
+	padding: 10px 10px 10px 0px;
+	margin-bottom: 30px;
+	border-bottom: 2px solid red;
+}
+
+#footer {
+	border-top: 2px solid red;
+	margin-top: 30px;
+	color: green;
+	padding-top: 10px;	
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+	background-color: #4CAE50;
+	
+	border: none;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
