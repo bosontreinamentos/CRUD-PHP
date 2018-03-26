@@ -22,3 +22,7 @@ CREATE TABLE `produtos` (
   FOREIGN KEY (login_id) REFERENCES login(id)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+CREATE USER fabio@localhost;
+GRANT ALL ON aula_crud.* TO fabio@localhost;
+SET PASSWORD FOR 'fabio'@'localhost' = PASSWORD('123');
