@@ -20,7 +20,7 @@ if(isset($_POST['submit'])) {
 	// Verificar se usuário preencheu os campos corretamente:
 	if($usuario == "" || $senha == "" || $nome == "" || $email == "") {
 		echo "Todos os campos devem ser preenchidos. Um ou mais campos estão vazios.<br>";
-		echo "<a href='register.php'>Voltar</a>";
+		echo "<a href='registrar.php'>Voltar</a>";
 	} else {
 		
 		// Criando hash da senha fornecida no formulário:
