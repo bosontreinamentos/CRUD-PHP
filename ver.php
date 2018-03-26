@@ -11,7 +11,7 @@ if(!isset($_SESSION['valid'])) {
 include_once("conectar.php");
 
 //buscar os dados em ordem descendente (entrada mais recente primeiro)
-$result = mysqli_query($mysqli, "SELECT * FROM produtos WHERE login_id=".$_SESSION['id']." ORDER BY id DESC");
+$result = mysqli_query($strcon, "SELECT * FROM produtos WHERE login_id=".$_SESSION['id']." ORDER BY id DESC");
 ?>
 
 <html>

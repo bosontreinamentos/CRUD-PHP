@@ -43,7 +43,7 @@ if(isset($_POST['Submit'])) {
 		// Se todos os campos estiverem preenchidos (não-vazios) 
 			
 		//Inserir os dados no banco de dados	
-		$result = mysqli_query($mysqli, "INSERT INTO produtos(nome, qtde, preco, login_id) VALUES('$nome','$qtde','$preco', '$loginId')");
+		$result = mysqli_query($strcon, "INSERT INTO produtos(nome, qtde, preco, login_id) VALUES('$nome','$qtde','$preco', '$loginId')");
 		
 		//Mostrar mensagem de sucesso na operação
 		echo "<font color='green'>Item adicionado com sucesso!";

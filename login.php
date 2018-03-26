@@ -10,15 +10,15 @@
 include("conectar.php");
 
 if(isset($_POST['submit'])) {
-	$usuario = mysqli_real_escape_string($mysqli, $_POST['usuario']);
-	$senha = mysqli_real_escape_string($mysqli, $_POST['senha']);
+	$usuario = mysqli_real_escape_string($strcon, $_POST['usuario']);
+	$senha = mysqli_real_escape_string($strcon, $_POST['senha']);
 
 	if($usuario == "" || $senha == "") {
 		echo "Nome de usuário ou senha vazios.";
 		echo "<br>";
 		echo "<a href='login.php'>Voltar</a>";
 	} else {
-		$result = mysqli_query($mysqli, "SELECT * FROM login WHERE usuario='$usuario'")
+		$result = mysqli_query($strcon, "SELECT * FROM login WHERE usuario='$usuario'")
 					or die("Impossível executar a consulta solicitada.");
 		
 		$linha = mysqli_fetch_assoc($result);
