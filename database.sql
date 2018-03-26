@@ -6,7 +6,7 @@ CREATE TABLE `login` (
   `id` int(9) NOT NULL auto_increment,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `usuario` varchar(100) NOT NULL,
+  `usuario` varchar(15) NOT NULL,
   `senha` varchar(100) NOT NULL,  
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB;
@@ -22,7 +22,3 @@ CREATE TABLE `produtos` (
   FOREIGN KEY (login_id) REFERENCES login(id)
   ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
-
-CREATE USER fabio@localhost;
-GRANT ALL ON aula_crud.* TO fabio@localhost;
-SET PASSWORD FOR 'fabio'@'localhost' = PASSWORD('123');

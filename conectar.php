@@ -2,9 +2,9 @@
 
 $Servidor = 'localhost';
 $nomeBanco = 'aula_crud';
-$Usuario = 'fabio';
-$Senha = '123';
+$Usuario = 'root';
+$Senha = 'root';
 
-$mysqli = mysqli_connect($Servidor, $Usuario, $Senha, $nomeBanco); 
+$strcon = mysqli_connect($Servidor, $Usuario, $Senha, $nomeBanco); 
 	
 ?>

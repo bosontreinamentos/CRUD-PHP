@@ -14,7 +14,7 @@ include("conectar.php");
 $id = $_GET['id'];
 
 //Excluir a linha da tabela
-$result=mysqli_query($mysqli, "DELETE FROM produtos WHERE id=$id");
+$result=mysqli_query($strcon, "DELETE FROM produtos WHERE id=$id");
 
 //Redirecionar para a página de visualização -> ver.php
 header("Location:ver.php");

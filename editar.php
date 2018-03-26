@@ -34,7 +34,7 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		//Atualizando a tabela
-		$result = mysqli_query($mysqli, "UPDATE produtos SET nome='$nome', qtde='$qtde', preco='$preco' WHERE id=$id");
+		$result = mysqli_query($strcon, "UPDATE produtos SET nome='$nome', qtde='$qtde', preco='$preco' WHERE id=$id");
 		
 		//Redirecionar para a página de visualização -> ver.php
 		header("Location: ver.php");
@@ -46,7 +46,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 //Selecionando dados associados com o id em particular:
-$result = mysqli_query($mysqli, "SELECT * FROM produtos WHERE id=$id");
+$result = mysqli_query($strcon, "SELECT * FROM produtos WHERE id=$id");
 
 while($res = mysqli_fetch_array($result))
 {
