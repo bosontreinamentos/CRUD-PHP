@@ -24,7 +24,7 @@
 	}
 	?>
 	<div id="footer">
-		Criado por <a href="http://www.bosontreinamentos.com.br" title="Fábio dos Reis - Bóson Treinomentos em Tecnologia" target="_blank">Fábio dos Reis</a>
+		Criado por <a href="http://www.bosontreinamentos.com.br" title="Fábio dos Reis - Bóson Treinamentos em Tecnologia" target="_blank">Fábio dos Reis</a>
 	</div>
 </body>
 </html>
