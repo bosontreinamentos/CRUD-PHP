@@ -27,9 +27,9 @@ if(isset($_POST['submit'])) {
 		$hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 		
 		// Conectar ao BD e inserir dados de cadastro:
-		mysqli_query($strcon, "INSERT INTO login(nome, email, usuario, senha)
-		VALUES('$nome', '$email', '$usuario', '$hashSenha')")
-			or die("Não é possível executar a operação solicitada.");
+		$sql = "INSERT INTO login(nome, email, usuario, senha)
+		VALUES('$nome', '$email', '$usuario', '$hashSenha')";
+		mysqli_query($strcon, $sql) or die("Não é possível executar a operação solicitada.");
 			
 		echo "Cadastro efetuado com sucesso!<br>";
 		echo "<a href='login.php'>Login</a>";
