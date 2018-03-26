@@ -12,7 +12,6 @@
 	<?php
 	if(isset($_SESSION['valid'])) {	// Verifica se usuário já está logado			
 		include("conectar.php");					
-		$result = mysqli_query($mysqli, "SELECT * FROM login");
 	?>
 				
 		Bem-vindo<?php echo $_SESSION['nome'] ?> ! <a href='logout.php'>Logout</a><br>
