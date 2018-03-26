@@ -3,7 +3,6 @@
 <head>
 	<title>Página Inicial</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
