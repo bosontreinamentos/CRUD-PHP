@@ -12,36 +12,37 @@ include("conectar.php");
 if(isset($_POST['submit'])) {
 	$usuario = mysqli_real_escape_string($strcon, $_POST['usuario']);
 	$senha = mysqli_real_escape_string($strcon, $_POST['senha']);
-
+	
 	if($usuario == "" || $senha == "") {
-		echo "Nome de usuário ou senha vazios.";
-		echo "<br>";
+		echo "Nome de usuário ou senha vazios.<br>";
 		echo "<a href='login.php'>Voltar</a>";
-	} else {
+	}
+	else {
 		$result = mysqli_query($strcon, "SELECT * FROM login WHERE usuario='$usuario'")
-					or die("Impossível executar a consulta solicitada.");
+					or die("Ocorreu um problema ao executar a consulta solicitada.");
 		
 		$linha = mysqli_fetch_assoc($result);
 		
 		if (password_verify($senha, $linha['senha'])) {
 		
 			if(is_array($linha) && !empty($linha)) {
-				$validuser = $linha['usuario'];
-				$_SESSION['valid'] = $validuser;
+				$usuarioLogado = $linha['usuario'];
+				$_SESSION['aberta'] = $usuarioLogado;
 				$_SESSION['nome'] = $linha['nome'];
 				$_SESSION['id'] = $linha['id'];
 			}
-		} else {
-			echo "Nome de usuário ou senha inválido.";
-			echo "<br>";
+		}
+		else {
+			echo "Nome de usuário ou senha inválido.<br>";
 			echo "<a href='login.php'>Voltar</a>";
 		}
 		
-		if(isset($_SESSION['valid'])) {
+		if(isset($_SESSION['aberta'])) {
 			header('Location: index.php');			
 		}
 	}
-} else {
+}
+else {
 ?>
 	<p><font size="+2">Login</font></p>
 	<form nome="form1" method="post" action="">

@@ -10,7 +10,7 @@
 		Bem-vindo ao Sistema de Cadastro de Produtos
 	</div>
 	<?php
-	if(isset($_SESSION['valid'])) {	// Verifica se usuário já está logado			
+	if(isset($_SESSION['aberta'])) {	// Verifica se usuário já está logado			
 		include("conectar.php");					
 		echo "Bem-vindo " . $_SESSION['nome'] . "!";
 		echo "<br><a href='logout.php'>Logout</a><br><br>";
