@@ -17,12 +17,20 @@ if(isset($_POST['submit'])) {
 	$usuario = $_POST['usuario'];
 	$senha = $_POST['senha'];
 
+	// Verificar se nome de usuário já existe no banco:
+	$sql = "SELECT usuario FROM login WHERE usuario = '$usuario'";
+	$res = mysqli_query($strcon, $sql) or die("Não é possível verificar se usuário existe.");	
+	$verificaUsuario = mysqli_fetch_array($res);
+	if ($verificaUsuario['usuario'] == $usuario) {
+		echo "Usuário já cadastrado.<br>";
+		echo "<a href='registrar.php'>Voltar</a>";
+	}
 	// Verificar se usuário preencheu os campos corretamente:
-	if($usuario == "" || $senha == "" || $nome == "" || $email == "") {
+	else if($usuario == "" || $senha == "" || $nome == "" || $email == "") {
 		echo "Todos os campos devem ser preenchidos. Um ou mais campos estão vazios.<br>";
 		echo "<a href='registrar.php'>Voltar</a>";
-	} else {
-		
+	}
+	else {
 		// Criando hash da senha fornecida no formulário:
 		$hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 		
@@ -37,7 +45,8 @@ if(isset($_POST['submit'])) {
 }
 else {
 ?>
-	<p><h2>Efetuar Cadastro</h2></p>
+	<p><h2>Efetuar Cadastro de novo Usuário</h2></p>
+	<p><h3>Preencha os campos abaixo e clique em "Registrar":</h3></p>
 	<form nome="form1" method="post" action="">
 		<table width="75%" border="0">
 			<tr> 
