@@ -1,12 +1,9 @@
-﻿<?php session_start(); ?>
+<?php session_start(); 
 
-<?php
 if(!isset($_SESSION['aberta'])) {
 	header('Location: login.php');
 }
-?>
 
-<?php
 //Incluir o arquivo de conexão ao banco de dados
 include("conectar.php");
 
