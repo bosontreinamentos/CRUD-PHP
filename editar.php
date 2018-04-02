@@ -21,16 +21,16 @@ if(isset($_POST['update']))
 	if(empty($nome) || empty($qtde) || empty($preco)) {
 				
 		if(empty($nome)) {
-			echo "<font color='red'>Campo Nome está vazio.</font><br>";
+			echo "<strong>Campo Nome está vazio.</strong><br>";
 		}
 		
 		if(empty($qtde)) {
-			echo "<font color='red'>Campo Quantidade está vazio.</font><br>";
+			echo "<strong>Campo Quantidade está vazio.</strong><br>";
 		}
 		
 		if(empty($preco)) {
-			echo "<font color='red'>Campo Preço está vazio.</font><br>";
-		}		
+			echo "<strong>Campo Preço está vazio.</strong><br>";
+		}			
 	} else {	
 		//Atualizando a tabela
 		$result = mysqli_query($strcon, "UPDATE produtos SET nome='$nome', qtde='$qtde', preco='$preco' WHERE id=$id");
