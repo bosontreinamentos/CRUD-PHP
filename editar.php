@@ -67,15 +67,15 @@ while($res = mysqli_fetch_array($result))
 		<table border="0">
 			<tr> 
 				<td>Nome</td>
-				<td><input type="text" name="nome" value="<?php echo $nome;?>"></td>
+				<td><input type="text" name="nome" value="<?php echo $nome;?>" required></td>
 			</tr>
 			<tr> 
 				<td>Quantidade</td>
-				<td><input type="text" name="qtde" value="<?php echo $qtde;?>"></td>
+				<td><input type="text" name="qtde" value="<?php echo $qtde;?>" required></td>
 			</tr>
 			<tr> 
 				<td>Preço</td>
-				<td><input type="text" name="preco" value="<?php echo $preco;?>"></td>
+				<td><input type="text" name="preco" value="<?php echo $preco;?>" required></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
