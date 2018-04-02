@@ -1,12 +1,11 @@
-﻿<?php session_start(); ?>
+<?php session_start();
 
-<?php
+
+// Verificar se usuário está logado. Se não, redirecionar para página de login:
 if(!isset($_SESSION['aberta'])) {
 	header('Location: login.php');
 }
-?>
 
-<?php
 // Incuir o arquivo de conexão ao banco de dados
 include_once("conectar.php");
 
@@ -22,16 +21,16 @@ if(isset($_POST['update']))
 	if(empty($nome) || empty($qtde) || empty($preco)) {
 				
 		if(empty($nome)) {
-			echo "<font color='red'>Campo Nome está vazio.</font><br>";
+			echo "<strong>Campo Nome está vazio.</strong><br>";
 		}
 		
 		if(empty($qtde)) {
-			echo "<font color='red'>Campo Quantidade está vazio.</font><br>";
+			echo "<strong>Campo Quantidade está vazio.</strong><br>";
 		}
 		
 		if(empty($preco)) {
-			echo "<font color='red'>Campo Preço está vazio.</font><br>";
-		}		
+			echo "<strong>Campo Preço está vazio.</strong><br>";
+		}			
 	} else {	
 		//Atualizando a tabela
 		$result = mysqli_query($strcon, "UPDATE produtos SET nome='$nome', qtde='$qtde', preco='$preco' WHERE id=$id");
@@ -68,15 +67,15 @@ while($res = mysqli_fetch_array($result))
 		<table border="0">
 			<tr> 
 				<td>Nome</td>
-				<td><input type="text" name="nome" value="<?php echo $nome;?>"></td>
+				<td><input type="text" name="nome" value="<?php echo $nome;?>" required></td>
 			</tr>
 			<tr> 
 				<td>Quantidade</td>
-				<td><input type="text" name="qtde" value="<?php echo $qtde;?>"></td>
+				<td><input type="text" name="qtde" value="<?php echo $qtde;?>" required></td>
 			</tr>
 			<tr> 
 				<td>Preço</td>
-				<td><input type="text" name="preco" value="<?php echo $preco;?>"></td>
+				<td><input type="text" name="preco" value="<?php echo $preco;?>" required></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>

@@ -20,7 +20,7 @@ if(isset($_POST['submit'])) {
 	// Verificar se nome de usuário já existe no banco:
 	$sql = "SELECT usuario FROM login WHERE usuario = '$usuario'";
 	$res = mysqli_query($strcon, $sql) or die("Não é possível verificar se usuário existe.");	
-	$verificaUsuario = mysqli_fetch_array($res);
+	$verificaUsuario = mysqli_fetch_assoc($res);
 	if ($verificaUsuario['usuario'] == $usuario) {
 		echo "Usuário já cadastrado.<br>";
 		echo "<a href='registrar.php'>Voltar</a>";
