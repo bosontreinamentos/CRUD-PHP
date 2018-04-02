@@ -20,7 +20,7 @@ if(isset($_POST['Submit'])) {
 	$qtde = $_POST['qtde'];
 	$preco = $_POST['preco'];
 	$loginId = $_SESSION['id'];
-		
+	
 	// Verificando se há campos vazios
 	if(empty($nome) || empty($qtde) || empty($preco)) {
 				
@@ -38,7 +38,13 @@ if(isset($_POST['Submit'])) {
 		
 		//Link para a página anterior
 		echo "<br><a href='javascript:self.history.back();'>Voltar</a>";
-	} else { 
+	}
+	// Verificando se campo preço possui apenas números:
+	else if(!is_numeric($preco)) {
+		echo "<script>alert('Digite apenas valores numéricos no preço!');</script>";
+		echo "<br><a href='javascript:self.history.back();'>Voltar</a>";
+	}
+	else { 
 		// Se todos os campos estiverem preenchidos (não-vazios) 
 			
 		//Inserir os dados no banco de dados	
