@@ -1,12 +1,11 @@
-﻿<?php session_start(); ?>
+<?php session_start();
 
-<?php
+
+// Verificar se usuário está logado. Se não, redirecionar para página de login:
 if(!isset($_SESSION['aberta'])) {
 	header('Location: login.php');
 }
-?>
 
-<?php
 // Incuir o arquivo de conexão ao banco de dados
 include_once("conectar.php");
 
