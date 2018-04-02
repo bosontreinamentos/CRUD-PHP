@@ -25,15 +25,15 @@ if(isset($_POST['Submit'])) {
 	if(empty($nome) || empty($qtde) || empty($preco)) {
 				
 		if(empty($nome)) {
-			echo "<font color='red'>Campo Nome está vazio.</font><br>";
+			echo "<strong>Campo Nome está vazio.</strong><br>";
 		}
 		
 		if(empty($qtde)) {
-			echo "<font color='red'>Campo Quantidade está vazio.</font><br>";
+			echo "<strong>Campo Quantidade está vazio.</strong><br>";
 		}
 		
 		if(empty($preco)) {
-			echo "<font color='red'>Campo Preço está vazio.</font><br>";
+			echo "<strong>Campo Preço está vazio.</strong><br>";
 		}
 		
 		//Link para a página anterior
@@ -45,7 +45,7 @@ if(isset($_POST['Submit'])) {
 		$result = mysqli_query($strcon, "INSERT INTO produtos(nome, qtde, preco, login_id) VALUES('$nome','$qtde','$preco', '$loginId')");
 		
 		//Mostrar mensagem de sucesso na operação
-		echo "<font color='green'>Item adicionado com sucesso!";
+		echo "<strong>Item adicionado com sucesso!</strong><br>";
 		echo "<br><a href='ver.php'>Visualizar Produtos</a>";
 	}
 }
